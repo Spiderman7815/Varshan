@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="DhJkpmFGcxJr5H-kqn24NK1nZHBy0cH7AC9-9rmVfk4" />  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your public key
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+  })();
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varshan Sabbani - Portfolio</title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Varshan Sabbani - Frontend Designer & Developer | Portfolio">
+  <meta property="og:description" content="Explore the portfolio of Varshan Sabbani, showcasing innovative web designs, creative solutions, and frontend development expertise.">
+  <meta property="og:image" content="https://i.imgur.com/4KOkcNf.png">
+  <meta property="og:image" content="https://i.imgur.com/5jI6Jk3.jpeg">
+  <meta property="og:image" content="https://i.imgur.com/Cpoivje.jpeg">
+  <meta property="og:image" content="https://i.imgur.com/ynJWhSa.jpeg">
+  <meta property="og:image" content="https://i.imgur.com/IBs8E2y.jpeg">
+  <meta property="og:image" content="https://i.imgur.com/6O4QlYc.jpeg">
+  <meta property="og:url" content="https://varshans.netlify.app">
+  <meta property="og:type" content="website">
+   
+ <!-- Favicon -->
+ <link rel="icon" href="https://i.imgur.com/FoyE2GM_d.png?maxwidth=520&shape=thumb&fidelity=high" type="image/png"> <!-- Updated with your new favicon -->
+  
+  <!-- AOS Library for scroll animations -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables with a dark theme */
+    :root {
+      --bg-color: #1a1a1a; /* Dark background */
+      --text-color: #ffffff;
+      --accent-color: #ff6b6b; /* Coral accent color */
+      --header-bg: #2c2c2c;
+      --card-bg: #2c2c2c;
+      --border-radius: 10px;
+      --transition: all 0.3s ease;
+    }
+
+    .light-theme {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --header-bg: #f5f5f5;
+      --card-bg: #f5f5f5;
+    }
+    
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: var(--transition);
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--accent-color);
+      transition: var(--transition);
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      padding: 8px;
+      z-index: 1000;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--header-bg);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+    
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+    
+    header h1 {
+      margin: 0;
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--accent-color);
+      transition: var(--transition);
+    }
+
+    #theme-toggle:hover {
+      transform: rotate(180deg);
+    }
+    
+    /* Navigation - Desktop */
+    nav.desktop-nav {
+      display: flex;
+      justify-content: center;
+    }
+    
+    nav.desktop-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    
+    nav.desktop-nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav.desktop-nav ul li a {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    
+    /* Hamburger Menu (Mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+    }
+    
+    .hamburger span {
+      height: 3px;
+      width: 100%;
+      background: var(--accent-color);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    
+    /* Mobile Menu - Full Screen Overlay */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--header-bg);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+      display: flex;
+    }
+    
+    .mobile-menu a {
+      padding: 15px;
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--accent-color);
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Sections */
+    section {
+      padding: 60px 20px; /* Reduced padding */
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: var(--accent-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Typing Effect */
+    .typing-container {
+      text-align: center;
+      margin-top: 100px;
+      padding: 0 20px;
+    }
+
+    .typing-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      display: inline-block;
+      white-space: pre-wrap; /* Preserve line breaks */
+      overflow: hidden;
+      border-right: 2px solid var(--accent-color); /* Cursor effect */
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: var(--accent-color);
+      animation: blink 0.8s infinite;
+      margin-left: 4px;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .typing-text {
+        font-size: 1.5rem;
+      }
+
+      nav.desktop-nav {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+
+      .about-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+      }
+
+      .skills {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skill {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .project {
+        width: 100%;
+      }
+
+      form {
+        width: 100%;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Projects Section */
+    .project {
+      background-color: var(--card-bg);
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project:hover {
+      transform: translateY(-10px);
+    }
+    
+    /* Modal for Project Details */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 150;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    /* Skills and Experience */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .skill {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .skill h3 {
+      margin-bottom: 10px;
+      color: var(--accent-color);
+    }
+    
+    .progress-bar {
+      background: #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 10px;
+    }
+    
+    .progress {
+      height: 10px;
+      background: var(--accent-color);
+      width: 0;
+      border-radius: 5px;
+    }
+    
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+    }
+    
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: var(--border-radius);
+      background-color: var(--card-bg);
+      color: var(--text-color);
+    }
+    
+    button, #modal-close-btn {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    button:hover, #modal-close-btn:hover {
+      opacity: 0.8;
+    }
+    
+    /* Thank You Modal */
+    .thank-you-modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .thank-you-content {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--header-bg);
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      transition: var(--transition);
+    }
+
+    #back-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    /* Connect with Me Section */
+    .connect-section {
+      padding: 50px;
+      background-color: var(--header-bg);
+      text-align: center;
+    }
+
+    .connect-section h2 {
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: var(--text-color);
+      font-size: 2rem;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+      transform: scale(1.2);
+    }
+
+    /* Loading Animation */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .loading-spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid var(--accent-color);
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Service Icons */
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div id="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Varshan Sabbani</h1>
+    </div>
+    <div>
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger" id="hamburger" aria-label="Menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation Menu (Full Screen Overlay) -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#connect">Connect</a>
+  </nav>
+  
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Typing Effect Section -->
+    <div class="typing-container">
+      <p id="typing-text" class="typing-text"></p>
+      <span class="cursor">|</span>
+    </div>
+
+    <!-- About Me Section -->
+    <section id="about" data-aos="fade-up">
+      <div class="container">
+        <div class="about-content">
+          <img src="https://i.imgur.com/FoyE2GM_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="Varshan Sabbani" class="about-image" loading="lazy" />
+          <h2>About Me</h2>
+
+          <div class="about-text">
+            <p>
+              Hi, I'm Varshan Sabbani, a passionate Full Stack Developer with a love for building scalable, user-friendly web applications. 
+              I specialize in <strong>React</strong>, <strong>Node.js</strong>, and <strong>JavaScript</strong>, and I enjoy turning complex problems into simple, beautiful solutions.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or playing video games.
+            </p>
+            <a href="#contact" class="cta-button">Let's Work Together!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" data-aos="fade-up">
+      <h2>Services I Offer</h2>
+      <div class="container">
+        <div class="skills">
+          <!-- Service 1: Website Design -->
+          <div class="skill">
+            <div class="service-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Website Design</h3>
+            <p>
+              I create visually stunning and user-friendly website designs tailored to your brand. From wireframes to final designs, I ensure your website stands out.
+            </p>
+          </div>
+    
+          <!-- Service 2: Full Stack Development -->
+          <div class="skill">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Full Stack Development</h3>
+            <p>
+              I build scalable and responsive web applications using modern technologies like React, Node.js, and MongoDB.
+            </p>
+          </div>
+    
+          <!-- Service 3: UI/UX Consulting -->
+          <div class="skill">
+            <div class="service-icon">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <h3>UI/UX Consulting</h3>
+            <p>
+              I provide expert advice on improving user experience and interface design to make your website more engaging and intuitive.
+            </p>
+          </div>
+    
+          <!-- Service 4: Website Maintenance -->
+          <div class="skill">
+            <div class="service-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Website Maintenance</h3>
+            <p>
+              I offer ongoing support and maintenance to ensure your website stays up-to-date, secure, and performs optimally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" data-aos="fade-up">
+      <h2>Skills & Experience</h2>
+      <div class="container">
+        <div class="skills">
+          <div class="skill">
+            <h3>HTML & CSS</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>React</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>Node.js</h3>
+            <div class="progress-bar">
+              <div class="progress" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up">
+      <h2>Projects</h2>
+      <div class="container">
+        <div class="project" tabindex="0" data-project="1">
+
+        <div class="project" tabindex="0" data-project="2">
+          <h3>Portfolio Website</h3>
+          <p>Designed and developed a responsive portfolio website.</p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+          <a href="https://varshans.netlify.app" target="_blank">view</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <span class="modal-close" id="modal-close" aria-label="Close Modal">&times;</span>
+        <h3 id="modal-title">Project Details</h3>
+        <p id="modal-description">More information about the project will appear here.</p>
+      </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact Me</h2>
+  <div class="container">
+    <form id="contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name" />
+      <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email" />
+      <textarea id="message" name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+      <button type="submit" id="submit-btn">Send</button>
+    </form>
+  </div>
+</section>
+    
+    <!-- Connect with Me Section -->
+    <section id="connect" class="connect-section" data-aos="fade-up">
+      <h2>Follow me on</h2>
+      <div class="container">
+        <div class="social-icons">
+          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/Sabbani-varshan-945622317" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/varshansabbani" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/varshan_saabz" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Thank You Modal -->
+    <div id="thank-you-modal" class="thank-you-modal" role="dialog" aria-modal="true">
+      <div class="thank-you-content">
+        <h3>Thank You!</h3>
+        <p>Your message has been sent.</p>
+        <button id="modal-close-btn">Close</button>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Varshan Sabbani. All rights reserved.</p>
+  </footer>
+  
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top">↑</button>
+  
+  <!-- AOS Library Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init();
+    
+    // Smooth Scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        if(document.getElementById('mobile-menu').classList.contains('active')) {
+          document.getElementById('mobile-menu').classList.remove('active');
+        }
+      });
+    });
+    
+    // Hamburger Menu Toggle (Full Screen Overlay)
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+      body.classList.toggle('no-scroll');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        body.classList.remove('no-scroll');
+      });
+    });
+
+    // Close mobile menu on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        body.classList.remove('no-scroll');
+      }
+    });
+    
+    // Project Modal Logic
+    const projects = document.querySelectorAll('.project');
+    const modal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    
+    projects.forEach(project => {
+      project.addEventListener('click', () => {
+        const projectId = project.getAttribute('data-project');
+        modalTitle.textContent = 'Project ' + projectId + ' Details';
+        modalDescription.textContent = 'Detailed information about Project ' + projectId + ' goes here. You can include images, links, and more.';
+        modal.style.display = 'flex';
+      });
+      project.addEventListener('keypress', e => {
+        if(e.key === 'Enter') project.click();
+      });
+    });
+    
+    modalClose.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+      if (e.target === document.getElementById('thank-you-modal')) {
+        document.getElementById('thank-you-modal').style.display = 'none';
+      }
+    });
+    
+   // Initialize EmailJS
+(function() {
+  emailjs.init("ytJRHuZn8OkS0pbkQ"); // Replace with your actual public key
+})();
+
+// Contact Form with EmailJS
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const thankYouModal = document.getElementById('thank-you-modal');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Disable button to prevent multiple submissions
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  
+  // Send the email
+  emailjs.sendForm('service_3m978aj', 'template_ih2tldo', this)
+    .then(function() {
+      // Show success message
+      thankYouModal.style.display = 'flex';
+      contactForm.reset();
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled = false;
+    }, function(error) {
+      // Show error message
+      alert('Oops... Something went wrong. Please try again later.');
+      console.error('EmailJS Error:', error);
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled = false;
+    });
+});
+
+// Close modal button
+document.getElementById('modal-close-btn').addEventListener('click', function() {
+  thankYouModal.style.display = 'none';
+});
+// Close modal button
+document.getElementById('modal-close-btn').addEventListener('click', function() {
+  thankYouModal.style.display = 'none';
+});
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      themeToggle.textContent = document.body.classList.contains('light-theme') ? '🌙' : '🌞';
+      localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+    });
+
+    // Check saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-theme');
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hide Loading Animation
+    window.addEventListener('load', function() {
+      document.getElementById('loading').style.display = 'none';
+    });
+
+    // Typing Text Animation
+    const lines = [
+      "Hi, I'm Varshan Sabbani.",
+      "A passionate Full Stack Developer.",
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    const typingText = document.getElementById('typing-text');
+    const cursor = document.querySelector('.cursor');
+
+    function type() {
+      if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+          typingText.textContent += lines[lineIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, 60); // Adjust typing speed
+        } else {
+          typingText.textContent += '\n'; // Move to the next line
+          lineIndex++;
+          charIndex = 0;
+          setTimeout(type, 10); // Delay before typing the next line
+        }
+      } else {
+        cursor.style.animation = 'none'; // Stop blinking after typing completes
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
